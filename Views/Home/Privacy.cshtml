@@ -1,0 +1,37 @@
+﻿@{
+    string[] haftaningunleri = { "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar" };
+    List<(int, string)> gunler = new List<(int, string)>
+    {
+        (1, "Pazartesi"),
+        (2, "Salı"),
+        (3, "Çarşamba"),
+        (4, "Perşembe"),
+        (5, "Cuma"),
+        (6, "Cumartesi"),
+        (7, "Pazar"),
+    };
+}
+<!-- Haftanın günlerini yanlarında numaraları ile birlikte ekranda gösteriniz
+Örnek Çıktı => 1) Pazartesi
+               2) Salı
+-->
+
+<div class="text-center">
+    <h1>HAFTANIN GÜNLERİ</h1>
+    @for (int i = 1; i < haftaningunleri.Length+1; i++)
+    {
+        <p>@i ) @haftaningunleri[i-1]</p>
+    }
+    <hr />
+    @foreach (var gun in haftaningunleri)
+    {
+        var index = Array.IndexOf(haftaningunleri, gun) + 1;
+        <p>@index) @gun</p>
+    }
+    <hr />
+    @foreach (var gun in gunler)
+    {
+        <p>@gun.Item1) @gun.Item2</p>
+    }
+
+</div>

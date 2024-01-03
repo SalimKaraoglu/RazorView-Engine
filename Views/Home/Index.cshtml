@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    string isim = "sinaemre";
+    string soyisim = "bekar";
+    int yas = 27;
+    DateTime bugunTarihi = DateTime.Now;
+    var fiyat = 50;
+    string[] sehirler = { "Ankara", "İstanbul", "Adana", "Eskişehir", "Trabzon" };
+    string bugun = "Pazartesi";
+}
+
+<div class="text-center">
+    <h1>Tarihi Yenilemek İçin Sayfayı Güncelleyin</h1>
+    <hr />
+    <h3>@bugunTarihi</h3>
+    <hr />
+    @if (fiyat > 50)
+    {
+        <table>
+            <p>Fiyat 50'nin Üzerinde!</p>
+        </table>
+    }
+    else
+    {
+        <p>Fiyat 50'nin Altında!</p>
+    }
+    <hr />
+    @for (int i = 0; i < 11; i++)
+    {
+        <p>No: @i</p>
+    }
+    <hr />
+    @foreach (var sehir in sehirler)
+    {
+        <p>@sehir</p>
+    }
+</div>
